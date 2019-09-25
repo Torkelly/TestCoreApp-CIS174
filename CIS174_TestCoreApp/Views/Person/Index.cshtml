@@ -1,0 +1,108 @@
+﻿@model CIS174_TestCoreApp.Models.CreatePersonViewModel
+
+<h2>Create Person</h2>
+<form method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.FirstName)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.FirstName)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.MiddleName)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.MiddleName)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.MiddleName)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.LastName)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.LastName)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.Age)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.Age)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.Age)
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.Email)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.Email)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.ConfirmEmail)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.ConfirmEmail)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.ConfirmEmail)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.Website)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.Website)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.Website)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(m => m.School)
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(m => m.School)
+                </div>
+                <div class="pull-right col-md-8 text-danger">
+                    @Html.ValidationMessageFor(m => m.School)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Create</button>
+</form>
