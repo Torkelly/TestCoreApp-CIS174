@@ -1,17 +1,10 @@
-﻿@*
-*@
-@{
-    var students = new List<string> { 
-        
-        "Montoya", "Joyce", "Bradley", "Remington", "Jennifer"
-    };
-}
+﻿@model StudentViewModel
 
-<h1>Student Registry</h1>
+<h3>@Model.Title</h3>
+
 <ul>
-    @for (var i = 0; i < students.Count; i++)
+    @foreach (var student in Model.Students)
     {
-        var student = students[i];
-        <li>@(i+1) - @student</li>
+        <li>@student</li>
     }
 </ul>
