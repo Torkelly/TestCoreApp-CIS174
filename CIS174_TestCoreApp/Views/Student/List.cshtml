@@ -1,0 +1,17 @@
+﻿@*
+*@
+@{
+    var students = new List<string> { 
+        
+        "Montoya", "Joyce", "Bradley", "Remington", "Jennifer"
+    };
+}
+
+<h1>Student Registry</h1>
+<ul>
+    @for (var i = 0; i < students.Count; i++)
+    {
+        var student = students[i];
+        <li>@(i+1) - @student</li>
+    }
+</ul>

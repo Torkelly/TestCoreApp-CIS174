@@ -15,6 +15,21 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    <style>
+
+        .dropdown-menu {
+            margin-left: 35.3%;
+            margin-top: -6px;
+            color: #989898;
+        }
+
+        .btn {
+            margin-top: 4px;
+            border: none;
+            background-color: transparent;
+            color: #989898;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -33,8 +48,17 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Person" asp-action="Index">Assignment 5.1</a></li>
                 </ul>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
+                        Assignments
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li><a asp-area="" asp-controller="Person" asp-action="Index">Assignment 5.1</a></li>
+                        <li><a asp-area="" asp-controller="Student" asp-action="Index">Assignment 6.1</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
