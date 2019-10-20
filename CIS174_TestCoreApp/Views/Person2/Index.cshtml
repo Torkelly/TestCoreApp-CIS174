@@ -4,6 +4,11 @@
     @Html.Partial("_ValidationScriptsPartial")
 }
 
+<environment include="Development">
+    <div><br /></div>
+    <div class="alert alert-danger">You are in a testing environment</div>
+</environment>
+
 <br />
 <h2>Add a person</h2>
 <form asp-action="CreatePerson" asp-controller="Person2">
