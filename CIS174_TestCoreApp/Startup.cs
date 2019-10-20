@@ -58,6 +58,7 @@ namespace CIS174_TestCoreApp
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

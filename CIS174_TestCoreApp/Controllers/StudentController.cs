@@ -56,7 +56,6 @@ namespace CIS174_TestCoreApp.Controllers
                 };
                 return View(viewModel);
             }
-
         }
 
         [HttpPost]
@@ -69,6 +68,5 @@ namespace CIS174_TestCoreApp.Controllers
 
             return RedirectToAction("Index", "Student");
         }
-        
     }
 }

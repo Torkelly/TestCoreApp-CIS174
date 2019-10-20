@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Xunit;
+using Xunit.Sdk;
 
 namespace CIS174_TestCoreApp.Models
 {
     public class CreatePersonViewModel
     {
         [Required]
-        [StringLength(25)]
+        [StringLength(25, ErrorMessage = "Maximum of 25 characters")]
         [Display(Name = "Your Name")]
         public string FirstName { get; set; }
 
@@ -14,7 +16,7 @@ namespace CIS174_TestCoreApp.Models
         public string MiddleName { get; set; }
 
         [Required]
-        [StringLength(25)]
+        [StringLength(25, MinimumLength = 2, ErrorMessage = "Must be between 2-25 characters")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
