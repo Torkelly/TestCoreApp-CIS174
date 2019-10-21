@@ -13,8 +13,20 @@ namespace CIS174_TestCoreApp.API
     {
         IEnumerable<HouseViewModel> Houses = new List<HouseViewModel>()
         {
-            new HouseViewModel() {Id = 1, Bedrooms = 4, SquareFeet = 1854, DateBuilt = DateTime.Parse("05/28/1973"), Flooring = "Carpet"},
-            new HouseViewModel() {Id = 2, Bedrooms = 3, SquareFeet = 1675, DateBuilt = DateTime.Parse("10/17/2015"), Flooring = "Hardwood"}
+            new HouseViewModel() 
+            {
+                Id = 1, Bedrooms = 4, 
+                SquareFeet = 1854, 
+                DateBuilt = DateTime.Parse("05/28/1973"), 
+                Flooring = "Carpet"
+            },
+            new HouseViewModel() 
+            {
+                Id = 2, Bedrooms = 3, 
+                SquareFeet = 1675, 
+                DateBuilt = DateTime.Parse("10/17/2015"), 
+                Flooring = "Hardwood"
+            }
         };
 
         [HttpGet("")]
