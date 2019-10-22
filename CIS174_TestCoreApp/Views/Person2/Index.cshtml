@@ -1,12 +1,13 @@
 ﻿@model CIS174_TestCoreApp.Models.CreatePerson2ViewModel
 
-<partial name="_ValidationScriptsPartial"/>
-
 <environment include="Development">
     <div><br /></div>
     <div class="alert alert-danger">You are in a testing environment</div>
 </environment>
 
+@section Scripts{
+    @Html.Partial("_ValidationScriptsPartial")
+}
 <br />
 <h2>Add a person</h2>
 <form asp-action="CreatePerson" asp-controller="Person2">

@@ -21,12 +21,12 @@ namespace CIS174_TestCoreApp.Controllers
         [HttpPost]
         public IActionResult CreatePerson(CreatePerson2ViewModel model)
         {
-            if(ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            return RedirectToAction("Index", "Person2");
+            return View();
         }
     }
 }
