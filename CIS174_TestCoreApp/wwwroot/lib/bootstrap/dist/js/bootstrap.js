@@ -199,7 +199,7 @@ if (typeof jQuery === 'undefined') {
     loadingText: 'loading...'
   }
 
-  Button.prototype.setState = function (state) {
+  Button.prototype.Accomplishmentstate = function (state) {
     var d    = 'disabled'
     var $el  = this.$element
     var val  = $el.is('input') ? 'val' : 'html'
@@ -258,7 +258,7 @@ if (typeof jQuery === 'undefined') {
       if (!data) $this.data('bs.button', (data = new Button(this, options)))
 
       if (option == 'toggle') data.toggle()
-      else if (option) data.setState(option)
+      else if (option) data.Accomplishmentstate(option)
     })
   }
 
@@ -986,7 +986,7 @@ if (typeof jQuery === 'undefined') {
     this.isShown = true
 
     this.checkScrollbar()
-    this.setScrollbar()
+    this.Accomplishmentscrollbar()
     this.$body.addClass('modal-open')
 
     this.escape()
@@ -1099,7 +1099,7 @@ if (typeof jQuery === 'undefined') {
     this.backdrop(function () {
       that.$body.removeClass('modal-open')
       that.resetAdjustments()
-      that.resetScrollbar()
+      that.reAccomplishmentscrollbar()
       that.$element.trigger('hidden.bs.modal')
     })
   }
@@ -1193,7 +1193,7 @@ if (typeof jQuery === 'undefined') {
     this.scrollbarWidth = this.measureScrollbar()
   }
 
-  Modal.prototype.setScrollbar = function () {
+  Modal.prototype.Accomplishmentscrollbar = function () {
     var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
     this.originalBodyPad = document.body.style.paddingRight || ''
     var scrollbarWidth = this.scrollbarWidth
@@ -1209,7 +1209,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Modal.prototype.resetScrollbar = function () {
+  Modal.prototype.reAccomplishmentscrollbar = function () {
     this.$body.css('padding-right', this.originalBodyPad)
     $(this.fixedContent).each(function (index, element) {
       var padding = $(element).data('padding-right')
@@ -2105,7 +2105,7 @@ if (typeof jQuery === 'undefined') {
     this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
     this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
     this.selector       = (this.options.target || '') + ' .nav li > a'
-    this.offsets        = []
+    this.offAccomplishments        = []
     this.targets        = []
     this.activeTarget   = null
     this.scrollHeight   = 0
@@ -2130,7 +2130,7 @@ if (typeof jQuery === 'undefined') {
     var offsetMethod  = 'offset'
     var offsetBase    = 0
 
-    this.offsets      = []
+    this.offAccomplishments      = []
     this.targets      = []
     this.scrollHeight = this.getScrollHeight()
 
@@ -2153,7 +2153,7 @@ if (typeof jQuery === 'undefined') {
       })
       .sort(function (a, b) { return a[0] - b[0] })
       .each(function () {
-        that.offsets.push(this[0])
+        that.offAccomplishments.push(this[0])
         that.targets.push(this[1])
       })
   }
@@ -2162,7 +2162,7 @@ if (typeof jQuery === 'undefined') {
     var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
     var scrollHeight = this.getScrollHeight()
     var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
-    var offsets      = this.offsets
+    var offAccomplishments      = this.offAccomplishments
     var targets      = this.targets
     var activeTarget = this.activeTarget
     var i
@@ -2175,15 +2175,15 @@ if (typeof jQuery === 'undefined') {
       return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
     }
 
-    if (activeTarget && scrollTop < offsets[0]) {
+    if (activeTarget && scrollTop < offAccomplishments[0]) {
       this.activeTarget = null
       return this.clear()
     }
 
-    for (i = offsets.length; i--;) {
+    for (i = offAccomplishments.length; i--;) {
       activeTarget != targets[i]
-        && scrollTop >= offsets[i]
-        && (offsets[i + 1] === undefined || scrollTop < offsets[i + 1])
+        && scrollTop >= offAccomplishments[i]
+        && (offAccomplishments[i + 1] === undefined || scrollTop < offAccomplishments[i + 1])
         && this.activate(targets[i])
     }
   }

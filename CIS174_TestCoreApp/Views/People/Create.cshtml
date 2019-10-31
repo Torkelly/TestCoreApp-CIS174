@@ -1,0 +1,68 @@
+﻿@model CreatePersonCommand
+@{
+    ViewData["Title"] = "Create Person";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<form asp-controller="People" asp-action="Create" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @await Html.PartialAsync("_EditPartial")
+
+
+    <div class="form-group">
+        <table class="table table-striped" id="accomplishments">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Accomplishment</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (int i = 1; i < Model.Accomplishments.Count; i++)
+                {
+                    var accomplishment = Model.Accomplishments[i];
+                    <tr>
+                        <td>
+                            <input asp-for="Accomplishments[i].Name" />
+                            <span asp-validation-for="Accomplishments[i].Name" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input asp-for="Accomplishments[i].DateOfAccomplishment" />
+                            <span asp-validation-for="Accomplishments[i].DateOfAccomplishment" class=" text-danger"></span>
+                        </td>
+                        <td>
+                            <a href="#" class="remove">Remove</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="button" class="btn btn-success" id="addAccomplishment">Add Accomplishment</button>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>var ingredients = $('#accomplishments tbody');
+        $("#addAccomplishment").click(function () {
+            var rowNo = accomplishments.find('tr').length;
+            var template =
+                '<tr>' +
+                '<td><input name="Accomplishments[' + rowNo + '].Name" id="Accomplishments_' + rowNo + '_Name" /></td>' +
+                '<td><input name="Accomplishments[' + rowNo + '].DateOfAccomplishment" id="Accomplishments_' + rowNo + 'DateOfAccomplishment" /></td>' +
+                '</tr>';
+            Accomplishments.append(template);
+        });
+
+        accomplishments.on('click', '.remove', function (e) {
+            $(this).closest('tr').remove();
+        });</script>
+}

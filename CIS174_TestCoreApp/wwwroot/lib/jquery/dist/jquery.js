@@ -1062,7 +1062,7 @@ isXML = Sizzle.isXML = function( elem ) {
 };
 
 /**
- * Sets document-related variables once based on the current document
+ * Accomplishments document-related variables once based on the current document
  * @param {Element|Object} [doc] An element or document object to use to set the document
  * @returns {Object} Returns the current document
  */
@@ -1306,7 +1306,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 
 			// Support: IE9-11+
-			// IE's :disabled selector does not pick up the children of disabled fieldsets
+			// IE's :disabled selector does not pick up the children of disabled fieldAccomplishments
 			docElem.appendChild( el ).disabled = true;
 			if ( el.querySelectorAll(":disabled").length !== 2 ) {
 				rbuggyQSA.push( ":enabled", ":disabled" );
@@ -3917,14 +3917,14 @@ var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 		len = elems.length,
 		bulk = key == null;
 
-	// Sets many values
+	// Accomplishments many values
 	if ( toType( key ) === "object" ) {
 		chainable = true;
 		for ( i in key ) {
 			access( elems, fn, i, key[ i ], true, emptyGet, raw );
 		}
 
-	// Sets one value
+	// Accomplishments one value
 	} else if ( value !== undefined ) {
 		chainable = true;
 
@@ -4274,7 +4274,7 @@ jQuery.fn.extend( {
 			return data;
 		}
 
-		// Sets multiple values
+		// Accomplishments multiple values
 		if ( typeof key === "object" ) {
 			return this.each( function() {
 				dataUser.set( this, key );
@@ -8702,7 +8702,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 }
 
 /* Chain conversions given the request and the original response
- * Also sets the responseXXX fields on the jqXHR instance
+ * Also Accomplishments the responseXXX fields on the jqXHR instance
  */
 function ajaxConvert( s, response, jqXHR, isSuccess ) {
 	var conv2, current, conv, tmp, prev,
@@ -10069,7 +10069,7 @@ jQuery.fn.extend( {
 			}
 		}
 
-		// Subtract parent offsets and element margins
+		// Subtract parent offAccomplishments and element margins
 		return {
 			top: offset.top - parentOffset.top - jQuery.css( elem, "marginTop", true ),
 			left: offset.left - parentOffset.left - jQuery.css( elem, "marginLeft", true )
