@@ -33,6 +33,7 @@ namespace CIS174_TestCoreApp
             });
 
             services.AddDbContext<PersonContext>();
+            services.AddScoped<PersonContext>();
             services.AddScoped<PersonService>();
 
             services.AddMvc();

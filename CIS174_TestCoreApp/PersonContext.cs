@@ -15,9 +15,7 @@ namespace CIS174_TestCoreApp
         {
 
         }
-
-        readonly PersonContext _context;
-
+        public readonly PersonContext _context;
         public int CreatePerson(CreatePersonCommand cpc)
         {
             var person = new Person
