@@ -35,6 +35,8 @@ namespace CIS174_TestCoreApp.Entities
         [Display(Name = "State")]
         public string State { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public virtual ICollection<Accomplishment> Accomplishments { get; set; }
     }
 }
