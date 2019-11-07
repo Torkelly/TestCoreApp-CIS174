@@ -46,7 +46,6 @@ namespace CIS174_TestCoreApp.Controllers
         public IActionResult Create(CreatePersonCommand command)
         {
             var id = _service.CreatePerson(command);
-            return RedirectToAction(nameof(View), new { id = id });
 
             return View(command);
         }
@@ -65,7 +64,6 @@ namespace CIS174_TestCoreApp.Controllers
         public IActionResult Edit(UpdatePersonCommand command)
         {
             _service.UpdatePerson(command);
-            return RedirectToAction(nameof(View), new { id = command.Id });
 
             return View(command);
         }
