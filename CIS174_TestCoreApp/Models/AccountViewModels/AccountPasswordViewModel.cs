@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CIS174_TestCoreApp.Models.AccountViewModels
 {
-    public class ForgotPasswordViewModel
+    public class AccountPasswordViewModel
     {
         [Required]
         [EmailAddress]
