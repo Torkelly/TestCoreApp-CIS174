@@ -48,20 +48,26 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
+                            Assignments
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li><a asp-area="" asp-controller="Person" asp-action="Index">Assignment 5.1</a></li>
+                            <li><a asp-area="" asp-controller="Student" asp-action="Index">Assignment 6.1</a></li>
+                            <li><a asp-area="" asp-controller="Person2" asp-action="Index">Assignment 7.1</a></li>
+                            <li><a asp-area="" asp-controller="People" asp-action="Index">Assignment 10.1</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="People" asp-action="Accomplishments">Assignment 12.2</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
-                        Assignments
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                        <li><a asp-area="" asp-controller="Person" asp-action="Index">Assignment 5.1</a></li>
-                        <li><a asp-area="" asp-controller="Student" asp-action="Index">Assignment 6.1</a></li>
-                        <li><a asp-area="" asp-controller="Person2" asp-action="Index">Assignment 7.1</a></li>
-                        <li><a asp-area="" asp-controller="People" asp-action="Index">Assignment 10.1</a></li>
-
-                    </ul>
-                </div>
+                @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
     </nav>

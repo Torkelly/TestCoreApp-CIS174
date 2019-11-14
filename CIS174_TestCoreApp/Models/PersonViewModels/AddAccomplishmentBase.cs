@@ -11,6 +11,7 @@ namespace CIS174_TestCoreApp.Models
         [StringLength(150)]
         public string Name { get; set; }
 
-        public DateTime DateOfAccomplishment { get; set; }
+        [DataType(DataType.Date)]
+        public string DateOfAccomplishment { get; set; }
     }
 }

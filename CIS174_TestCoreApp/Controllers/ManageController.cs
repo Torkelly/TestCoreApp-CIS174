@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -9,11 +9,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using CIS174_TestCoreApp.Models.ManageViewModels;
+using CIS174_TestCoreApp.Services;
 using System.Security.Claims;
 using CIS174_TestCoreApp.Entities;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using CIS174_TestCoreApp.Models.ManageViewModels;
 
 namespace CIS174_TestCoreApp.Controllers
 {
@@ -305,7 +304,7 @@ namespace CIS174_TestCoreApp.Controllers
             var model = new TwoFactorAuthenticationViewModel
             {
                 HasAuthenticator = await _userManager.GetAuthenticatorKeyAsync(user) != null,
-                Is2FAEnabled = user.TwoFactorEnabled,
+                Is2faEnabled = user.TwoFactorEnabled,
                 RecoveryCodesLeft = await _userManager.CountRecoveryCodesAsync(user),
             };
 

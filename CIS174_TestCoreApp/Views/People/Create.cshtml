@@ -1,4 +1,5 @@
-﻿@model CreatePersonCommand
+﻿
+@model CreatePersonCommand
 @{
     ViewData["Title"] = "Create Person";
 }
@@ -7,7 +8,6 @@
 <form asp-controller="People" asp-action="Create" method="post" class="form-horizontal">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     @await Html.PartialAsync("_EditPartial")
-
 
     <div class="form-group">
         <table class="table table-striped" id="accomplishments">
@@ -20,15 +20,17 @@
             </thead>
 
             <tbody>
-                @for (int i = 1; i < Model.Accomplishments.Count; i++)
+                @for (int i = 0; i < Model.Accomplishments.Count; i++)
                 {
                     var accomplishment = Model.Accomplishments[i];
                     <tr>
                         <td>
+                            <label>Name of Accomplishment: </label>
                             <input asp-for="Accomplishments[i].Name" />
                             <span asp-validation-for="Accomplishments[i].Name" class="text-danger"></span>
                         </td>
                         <td>
+                            <label>Date of Accomplishment</label>
                             <input asp-for="Accomplishments[i].DateOfAccomplishment" />
                             <span asp-validation-for="Accomplishments[i].DateOfAccomplishment" class=" text-danger"></span>
                         </td>
@@ -51,7 +53,8 @@
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-    <script>var ingredients = $('#accomplishments tbody');
+    <script>
+        var accomplishments = $('#accomplishments tbody');
         $("#addAccomplishment").click(function () {
             var rowNo = accomplishments.find('tr').length;
             var template =
@@ -59,10 +62,10 @@
                 '<td><input name="Accomplishments[' + rowNo + '].Name" id="Accomplishments_' + rowNo + '_Name" /></td>' +
                 '<td><input name="Accomplishments[' + rowNo + '].DateOfAccomplishment" id="Accomplishments_' + rowNo + 'DateOfAccomplishment" /></td>' +
                 '</tr>';
-            Accomplishments.append(template);
+            accomplishments.append(template);
         });
-
         accomplishments.on('click', '.remove', function (e) {
             $(this).closest('tr').remove();
-        });</script>
+        });
+    </script>
 }

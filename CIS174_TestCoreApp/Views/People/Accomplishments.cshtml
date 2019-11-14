@@ -1,0 +1,26 @@
+﻿
+@model ICollection<AccomplishmentSummary>
+@{
+    ViewData["Title"] = "Menus";
+}
+<div class="table-responsive">
+    <table class="table table-striped recipe">
+        <thead>
+            <tr>
+                <th>Accomplishment Name</th>
+                <th>Accomplishment Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var accomplishment in Model)
+            {
+                <tr>
+                    <td>@accomplishment.Name</td>
+                    <td>@accomplishment.DateOfAccomplishment</td>
+                    <td><a asp-action="View" asp-route-id="@accomplishment.PersonId" class="btn">View</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

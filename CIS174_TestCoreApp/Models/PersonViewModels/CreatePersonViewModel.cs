@@ -1,7 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Xunit;
-using Xunit.Sdk;
-
 namespace CIS174_TestCoreApp.Models
 {
     public class CreatePersonViewModel

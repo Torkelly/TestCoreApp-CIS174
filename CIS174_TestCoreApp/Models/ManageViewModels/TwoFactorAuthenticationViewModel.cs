@@ -8,9 +8,9 @@ namespace CIS174_TestCoreApp.Models.ManageViewModels
     public class TwoFactorAuthenticationViewModel
     {
         public bool HasAuthenticator { get; set; }
-
+        public bool IsMachineRemembered { get; set; }
         public int RecoveryCodesLeft { get; set; }
-
-        public bool Is2FAEnabled { get; set; }
+        public string StatusMessage { get; set; }
+        public bool Is2faEnabled { get; set; }
     }
 }

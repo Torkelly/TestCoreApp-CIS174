@@ -11,11 +11,11 @@ namespace CIS174_TestCoreApp.Models
         public int Id { get; set; }
         public int PersonId { get; set; }
         public string Name { get; set; }
-
         [DataType(DataType.Date)]
         public string DateOfAccomplishment { get; set; }
 
-        public static AccomplishmentSummary FromAccomplishment(AccomplishmentSummary accomplishment, PersonSummary person)
+        public static AccomplishmentSummary FromAccomplishment(AccomplishmentSummary accomplishment, PersonSummary person
+            )
         {
             return new AccomplishmentSummary
             {

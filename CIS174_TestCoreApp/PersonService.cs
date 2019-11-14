@@ -1,6 +1,6 @@
-﻿
-using CIS174_TestCoreApp.Entities;
+﻿using CIS174_TestCoreApp.Entities;
 using CIS174_TestCoreApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;

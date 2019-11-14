@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,13 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CIS174_TestCoreApp.Controllers
 {
-    public class Person3Controller : Controller
+    public class PeopleController : Controller
     {
         private readonly PersonService _service;
         private readonly UserManager<ApplicationUser> _userService;
         private readonly IAuthorizationService _authService;
 
-        public Person3Controller(
+        public PeopleController(
             PersonService service,
             UserManager<ApplicationUser> userService,
             IAuthorizationService authService)
@@ -37,9 +36,9 @@ namespace CIS174_TestCoreApp.Controllers
         [Authorize]
         public IActionResult Accomplishments()
         {
-            var model = _service.GetAccomplishments();
+            var models = _service.GetAccomplishments();
 
-            return View(model);
+            return View(models);
         }
 
         public IActionResult View(int id)

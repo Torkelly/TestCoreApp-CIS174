@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CIS174_TestCoreApp.Entities;
 using CIS174_TestCoreApp.Filters;
 using CIS174_TestCoreApp.Models;
 using Microsoft.AspNetCore.Http;
