@@ -6,6 +6,8 @@ using CIS174_TestCoreApp.Filters;
 using CIS174_TestCoreApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+
 namespace CIS174_TestCoreApp.API
 {
     [Route("api/person")]
@@ -18,10 +20,11 @@ namespace CIS174_TestCoreApp.API
     {
         public readonly PersonService _personService;
         public readonly PersonContext _context;
-
-        public PersonApiController(PersonService personService)
+        public ILogger<PersonApiController> _logger;
+        public PersonApiController(PersonService service, ILogger<PersonApiController> logger)
         {
-            _personService = personService;
+            _personService = service;
+            _logger = logger;
         }
 
         [AddLastModifiedHeader]
@@ -29,6 +32,13 @@ namespace CIS174_TestCoreApp.API
         public IActionResult Get(int id)
         {
             var detail = _personService.GetPersonDetails(id);
+            
+            if (detail == null)
+            {
+                _logger.LogWarning("Person ID {PersonId} not found", id);
+                return NotFound();
+            }
+
             return Ok(detail);
         }
 
@@ -38,6 +48,7 @@ namespace CIS174_TestCoreApp.API
 
             if (person == null)
             {
+                _logger.LogWarning("{PersonId} could not be changed.", id);
                 throw new Exception("Unable to find person");
             }
 
@@ -47,6 +58,7 @@ namespace CIS174_TestCoreApp.API
             person.City = command.City;
             person.State = command.State;
 
+            _personService.UpdatePerson(command);
             _context.SaveChanges();
         }
     }
